@@ -5,7 +5,8 @@ const SideBar = ({ setProductsList, products }) => {
 	const brands = ["brand x", "brand y", "brand z"];
 	const idealFor = ["men", "women"];
 
-	const filterList = (size, basis) => {
+	const filterList = (size, basis, e) => {
+		e.preventDefault();
 		const filteredProducts = products.filter(item => item[basis] === size);
 		setProductsList(filteredProducts);
 	};
@@ -19,8 +20,7 @@ const SideBar = ({ setProductsList, products }) => {
 				<ul>
 					{sizes.map(item => (
 						<li key={item}>
-							<input type="radio" name="size" value={item} id={item} onClick={({ target }) => filterList(target.value, "size")} />
-							<label>{item}</label>
+							<button onClick={e => filterList(item, "size", e)}>{item}</button>
 						</li>
 					))}
 				</ul>
@@ -31,8 +31,7 @@ const SideBar = ({ setProductsList, products }) => {
 				<ul>
 					{brands.map(item => (
 						<li key={item}>
-							<input type="radio" name="size" value={item} id={item} onClick={({ target }) => filterList(target.value, "brand")} />
-							<label>{item}</label>
+							<button onClick={e => filterList(item, "brand", e)}>{item}</button>
 						</li>
 					))}
 				</ul>
@@ -43,8 +42,7 @@ const SideBar = ({ setProductsList, products }) => {
 				<ul>
 					{idealFor.map(item => (
 						<li key={item}>
-							<input type="radio" name="size" value={item} id={item} onClick={({ target }) => filterList(target.value, "idealFor")} />
-							<label>{item}</label>
+							<button onClick={e => filterList(item, "idealFor", e)}>{item}</button>
 						</li>
 					))}
 				</ul>
