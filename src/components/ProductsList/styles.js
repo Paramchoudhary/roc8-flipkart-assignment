@@ -27,3 +27,6 @@ export const ProductsListContainer = styled.div`
 	padding-top: 10px;
 	flex-grow: 1;
 `;
+export const made = styled.div`
+text-align : center;
+`;
