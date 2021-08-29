@@ -22,6 +22,7 @@ const ProductsList = ({ productsList, sortPrice, resetOrder }) => {
 				))}
 			</CardsContainer>
 		</ProductsListContainer>
+  <p className = made>Made by chetanchandel31</p>
 	);
 };
 
